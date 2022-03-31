@@ -1,0 +1,44 @@
+<html>
+
+<center>
+<head>
+
+<link type="text/css" rel="stylesheet" href="static/main.css">
+
+</head>
+
+<table border = '1'>
+  <tr>
+    <th>username</th>
+    <th>password</th>
+    <th>cpassword</th>
+    <th>email</th>
+    <th>DELETE</th>
+    <th>EDIT</th>
+  </tr>
+
+
+                {% for i in submit %}
+                    <div class="row">
+
+                      <tr>
+                        <td> {{ i.username }}</td>
+                        <td>{{ i.password }}</td>
+                        <td>{{ i.cpassword }}</td>
+                        <td>{{ i.email }}</td>
+                        <td><a  class="button" href="{% url 'd' i.pk %}">Delete</a></td>
+                        <td><a  class="button" href="{% url 'update'  i.id %}">Edit</a></td>
+                      </tr>           
+
+                    </div>
+                {% endfor %}
+
+                    
+
+    </table>
+
+    </center>   
+
+
+
+</html>
